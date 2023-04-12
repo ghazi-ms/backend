@@ -1,0 +1,27 @@
+from feedgen.feed import FeedGenerator
+
+# create a new feed
+fg = FeedGenerator()
+fg.title('My RSS Feed')
+fg.link(href='https://example.com', rel='alternate')
+fg.description('This is my personal RSS feed.')
+
+# add some entries
+fe = fg.add_entry()
+fe.id('https://example.com/article1')
+fe.title('Article 1')
+fe.link(href='https://example.com/article1', rel='alternate')
+fe.description('This is my first article.')
+
+fe = fg.add_entry()
+fe.id('https://example.com/article2')
+fe.title('Article 2')
+fe.link(href='https://example.com/article2', rel='alternate')
+fe.description('This is my second article.')
+
+# generate the XML
+rss_feed = fg.rss_str(pretty=True)
+
+# save the XML to a file
+with open('my_rss_feed.xml', 'w') as f:
+    f.write(rss_feed)
