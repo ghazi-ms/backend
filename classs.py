@@ -22,10 +22,10 @@ class news:
         return {
         "id": 'id'+str(random.randrange(1,99999999)),
         "title": self.title,
-        "description": self.description,
         "Coordinates": self.points,
         "Locations":self.location,
-        "timeStamp": self.timeStamp
+        "timeStamp": self.timeStamp,
+        "description": self.description
         }
     def SetPoints(self,pointss):
         self.points=pointss
